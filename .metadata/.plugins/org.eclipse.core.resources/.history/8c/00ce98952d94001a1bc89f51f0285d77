@@ -1,0 +1,27 @@
+package project;
+
+import java.sql.DriverManager;
+
+import com.sun.jdi.connect.spi.Connection;
+
+public class Myconnect {
+	private final String className = "com.mysql.jdbc.Driver";
+	
+	private Connection connecttion;
+	
+	private void connect() {
+		try {
+			Class.forName(className);
+			connecttion = DriverManager.getConnection(url);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		/
+	}
+	
+	public static void main(String[] args) {
+		Myconnect myconnect = new Myconnect();
+	}
+	
+}

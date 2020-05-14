@@ -1,0 +1,31 @@
+package project;
+
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import com.sun.jdi.connect.spi.Connection;
+
+public class Myconnect {
+	private final String className = "com.mysql.jdbc.Driver";
+	
+	private Connection connecttion;
+	
+	private final String url = "jdbc:myspl://localhost:3306/Studen";
+	private void connect() {
+		try {
+			Class.forName(className);
+			
+				connecttion = (Connection) DriverManager.getConnection(url);
+		}catch (SQLException e) {
+			System.out.println("err connetion");
+		}catch (ClassNotFoundException e) {
+			System.out.println("class not found");
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		Myconnect myconnect = new Myconnect();
+	}
+	
+}

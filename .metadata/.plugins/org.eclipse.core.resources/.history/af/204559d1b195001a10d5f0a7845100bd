@@ -1,0 +1,47 @@
+package project;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.sound.midi.Soundbank;
+
+public class InserStatement {
+
+	public static void insertRecords(int id, String name ) {
+		
+		Connection connection = Myconnect.getJDBCConnection();
+		
+		try {
+			Statement statement = connection.createStatement();
+			
+			String sql = "Insert into demo(id, name) values(4, 'A')";
+		
+			int rs = statement.executeUpdate(sql);
+			System.out.println(rs);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	public static void updateRecords(int id, String name ) {
+		
+		
+		
+	}
+	
+	public static void deleteRecords() {
+		
+	}
+
+	
+	public static void main(String[] args) {
+		insertRecords(4, 'a');
+	}
+	
+	
+	
+}

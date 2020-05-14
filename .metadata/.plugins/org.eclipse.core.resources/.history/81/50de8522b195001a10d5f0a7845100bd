@@ -1,0 +1,28 @@
+package project;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class InserStatement {
+
+	public static void insertRecords(int id, String name ) {
+		
+		Connection connection = Myconnect.getJDBCConnection();
+		
+		try {
+			Statement statement = connection.createStatement();
+			
+			string sql = "Insert into demo(id, name) values(4, 'A')";
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
+	
+}

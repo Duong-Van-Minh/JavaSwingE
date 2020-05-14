@@ -1,0 +1,31 @@
+package project;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class student {
+
+	public static void main(String[] args) {
+		
+		try {
+			Connection con = Myconnect.getJDBCConnection();
+			Statement statement = con.createStatement();
+			
+			String spl = "SELECT * FROM DEMO";
+			
+			ResultSet rs = statement.executeQuery(spl);
+			
+			while(rs.next()) {
+				int id = rs.getInt("id");
+				String name = rs.getString("name");
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}
